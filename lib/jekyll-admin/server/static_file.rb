@@ -42,7 +42,7 @@ module JekyllAdmin
         if !request_payload["raw_content"].to_s.empty?
           request_payload["raw_content"].to_s
         else
-          Base64.decode64 request_payload["encoded_content"].to_s
+          Base64.strict_decode64 request_payload["encoded_content"].to_s
         end
       end
 

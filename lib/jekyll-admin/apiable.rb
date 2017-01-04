@@ -97,7 +97,7 @@ module JekyllAdmin
     end
 
     def encoded_content
-      @encoded_content ||= Base64.encode64(file_contents) if file_exists?
+      @encoded_content ||= Base64.strict_encode64(file_contents) if file_exists?
     end
 
     def file_exists?
